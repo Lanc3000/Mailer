@@ -1,0 +1,17 @@
+D:\Учёба\Курс по C#3\HomeWork\Mailer\Mailer\bin\Debug\Mailer.exe.config
+D:\Учёба\Курс по C#3\HomeWork\Mailer\Mailer\bin\Debug\Mailer.exe
+D:\Учёба\Курс по C#3\HomeWork\Mailer\Mailer\bin\Debug\Mailer.pdb
+D:\Учёба\Курс по C#3\HomeWork\Mailer\Mailer\obj\Debug\Mailer.csprojAssemblyReference.cache
+D:\Учёба\Курс по C#3\HomeWork\Mailer\Mailer\obj\Debug\MainWindow.g.cs
+D:\Учёба\Курс по C#3\HomeWork\Mailer\Mailer\obj\Debug\App.g.cs
+D:\Учёба\Курс по C#3\HomeWork\Mailer\Mailer\obj\Debug\Mailer_MarkupCompile.cache
+D:\Учёба\Курс по C#3\HomeWork\Mailer\Mailer\obj\Debug\Mailer_MarkupCompile.lref
+D:\Учёба\Курс по C#3\HomeWork\Mailer\Mailer\obj\Debug\MainWindow.baml
+D:\Учёба\Курс по C#3\HomeWork\Mailer\Mailer\obj\Debug\Mailer.g.resources
+D:\Учёба\Курс по C#3\HomeWork\Mailer\Mailer\obj\Debug\Mailer.Properties.Resources.resources
+D:\Учёба\Курс по C#3\HomeWork\Mailer\Mailer\obj\Debug\Mailer.csproj.GenerateResource.cache
+D:\Учёба\Курс по C#3\HomeWork\Mailer\Mailer\obj\Debug\Mailer.csproj.CoreCompileInputs.cache
+D:\Учёба\Курс по C#3\HomeWork\Mailer\Mailer\obj\Debug\Mailer.exe
+D:\Учёба\Курс по C#3\HomeWork\Mailer\Mailer\obj\Debug\Mailer.pdb
+D:\Учёба\Курс по C#3\HomeWork\Mailer\Mailer\obj\Debug\wndAbout.g.cs
+D:\Учёба\Курс по C#3\HomeWork\Mailer\Mailer\obj\Debug\wndAbout.baml
