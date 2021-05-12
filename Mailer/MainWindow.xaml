@@ -34,8 +34,67 @@
                         <TextBlock Margin="3">Группы</TextBlock>
                     </StackPanel>
                 </TabItem.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock>
+                         Email
+                    </TextBlock>
+                    <TextBox Grid.Row="1" Grid.ColumnSpan="3" Background="Gray">
+                        None
+                    </TextBox>
+                    <ListBox Grid.Row="2">
+                        <ListBoxItem>123</ListBoxItem>
+                        <ListBoxItem>123</ListBoxItem>
+                        <ListBoxItem>123</ListBoxItem>
+                    </ListBox>
+                </Grid>
             </TabItem>
-            <TabItem Header="Письмо"></TabItem>
+            <TabItem >
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                        <StackPanel.ToolTip>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/Images/Mail_64x.png" />
+                                <TextBlock>Заполнение полей письма</TextBlock>
+                            </StackPanel>
+                        </StackPanel.ToolTip>
+                        <Image Source="/Images/Mail_64x.png" Width="20"/>
+                        <TextBlock>Письмо</TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBox x:Name="tbToAddress"  Grid.Row="0" Grid.Column="0">from@gmail.com</TextBox>
+                    <TextBox x:Name="tbFromAddress" Grid.Row="0" Grid.Column="1">toVasya@mail.ru</TextBox>
+                    <PasswordBox x:Name="pbPassword" Grid.Row="1" Grid.Column="1"></PasswordBox>
+                    <TextBox x:Name="tbMesSubject" Grid.Row="2" Grid.Column="0">Содержание письма</TextBox>
+                    <TextBox x:Name="tbMesBody" Grid.Row="1" Grid.Column="0">Тема письма</TextBox>
+                    <Button x:Name="btSend" Grid.Row="0" Grid.Column="2" Click="btSend_Click">
+                        <StackPanel Orientation="Vertical">
+                            <Image Source="/Images/outbox1.png" Width="40"/>
+                            <TextBlock>Отправить</TextBlock>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </TabItem>
             <TabItem Header="Планировщик"></TabItem>
             <TabItem Header="Настройки"></TabItem>
             <TabItem Header="Отчет"></TabItem>

@@ -7,6 +7,24 @@
         mc:Ignorable="d"
         Title="wndAbout" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Image Source="/Images/Я.jpg" Grid.Row="0" Grid.Column="0" Margin="10" Height="150"/>
+        <TextBlock Grid.Row="0" Grid.Column="1">
+            Самигуллин Тимур,
+            34 года, Москва
+        </TextBlock>
+        <Button x:Name="btClose" Grid.Column="0" Grid.Row="1" Click="btClose_Click">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock VerticalAlignment="Center">Закрыть</TextBlock>
+                <Image Source="/Images/close-window.png"  Height="25" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Button>
     </Grid>
 </Window>
