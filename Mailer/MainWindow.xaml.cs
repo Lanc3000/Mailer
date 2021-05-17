@@ -29,6 +29,9 @@ namespace Mailer
             cbSenderSelect.ItemsSource = VariableClass.Senders;
             cbSenderSelect.DisplayMemberPath = "Key";
             cbSenderSelect.SelectedValuePath = "Value";
+
+            DBclass db = new DBclass();
+            dgEmails.ItemsSource = db.Emails; // привязка данных из БД к элементу управления DataGrid (отображение адресатов)
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)

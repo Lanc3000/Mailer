@@ -106,14 +106,7 @@
                             </Button>
                         </ToolBar>
                     </ToolBarTray>
-                    <TextBox Grid.Row="1" Grid.ColumnSpan="3" Background="Gray">
-                        None
-                    </TextBox>
-                    <ListBox Grid.Row="2">
-                        <ListBoxItem>123</ListBoxItem>
-                        <ListBoxItem>123</ListBoxItem>
-                        <ListBoxItem>123</ListBoxItem>
-                    </ListBox>
+                    <DataGrid Grid.Row="1" Grid.ColumnSpan="3" x:Name="dgEmails" AutoGenerateColumns="True"/>
                 </Grid>
             </TabItem>
             <TabItem >
