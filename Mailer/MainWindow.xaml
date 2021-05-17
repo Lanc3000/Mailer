@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mailer"
         mc:Ignorable="d"
-        Title="Mailer" Height="450" Width="800" Icon="schedule.ico">
+        Title="Mailer" Height="450" Width="830" Icon="schedule.ico">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="39*"/>
@@ -20,7 +20,7 @@
                 <MenuItem Header="About" Click="MenuItem_Click"/>
             </MenuItem>
         </Menu>
-        <TabControl Grid.Row="1" x:Name="tabControl1" TabStripPlacement="Right">
+        <TabControl Grid.Row="1" x:Name="tabControl" TabStripPlacement="Right">
             <TabItem>
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
@@ -36,18 +36,76 @@
                 </TabItem.Header>
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
-                    <TextBlock>
-                         Email
-                    </TextBlock>
+                    <ToolBarTray  Width="Auto" Height="65" VerticalAlignment="Top">
+                        <ToolBar x:Name="tbSender" Width="Auto" Height="30" >
+                            <Label x:Name="lSender" Content="Выбрать отправителя" Width="130" Height="25"/>
+                            <ComboBox x:Name="cbSenderSelect" Width="270" Height="25" ToolTip="Выбрать email отправителя" SelectedIndex="0"/>
+                            <Button x:Name="btnAddSender" Width="25" Height="25" ToolTip="Добавить"
+                                    VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                <Image Source="/Images/New Add64.png" />
+                            </Button>
+                            <Button x:Name="btnEditSender" Width="25" Height="25" ToolTip="Редактировать"
+                                    VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                <Image Source="/Images/New Edit64.png" />
+                            </Button>
+                            <Button x:Name="btnDeleteSender" Width="25" Height="25" ToolTip="Удалить"
+                                    VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                <Image Source="/Images/New Remove64.png" />
+                            </Button>
+                        </ToolBar>
+                        <ToolBar x:Name="tbSmtp" HorizontalAlignment="Left" Height="30" Width="Auto"
+                                 VerticalAlignment="Top" Band="1" BandIndex="0">
+                            <Label x:Name="lSmtp" Content="Выбрать smtp-сервер" Height="25" Width="Auto"/>
+                            <ComboBox x:Name="cbSmtpSelect" Height="25" Width="270" Margin="0"
+                                      VerticalAlignment="Top" SelectedIndex="0" ToolTip="Выбрать smtp-сервер">
+                            </ComboBox>
+                            <Button x:Name="btnAddSmtp" Width="25" Height="25" ToolTip="Добавить"
+                                    VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                <Image Source="/Images/New Add64.png" />
+                            </Button>
+                            <Button x:Name="btnEditSmtp" Width="25" Height="25" ToolTip="Редактировать"
+                                  VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                <Image Source="/Images/New Edit64.png" />
+                            </Button>
+                            <Button x:Name="btnDeleteSmtp" Width="25" Height="25" ToolTip="Удалить"
+                                  VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                <Image Source="/Images/New Remove64.png" />
+                            </Button>
+                        </ToolBar>
+                        <ToolBar x:Name="tbPlanner" HorizontalAlignment="Left" VerticalAlignment="Top"
+                                 Height="30" Width="Auto" Band="0" BandIndex="1">
+                            <Label x:Name="lPlanner" Content="Перейти в планировщик" Height="25" Width="Auto"/>
+                            <Button x:Name="btnClock" Width="25" Height="25" ToolTip="Перейти в планировщик"
+                                    Click="btnClock_Click">
+                                <Image Source="/Images/clock.png" />
+                            </Button>
+                        </ToolBar>
+                        <ToolBar x:Name="tbAddressee" HorizontalAlignment="Left" VerticalAlignment="Top"
+                                 Height="30" Width="Auto" Band="1" BandIndex="1">
+                            <Label x:Name="lAddressee" Content="Список адресов" Height="25" Width="Auto"/>
+                            <Button x:Name="btnAddAddressee" Width="25" Height="25" ToolTip="Добавить"
+                                    VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                <Image Source="/Images/New Add64.png" />
+                            </Button>
+                            <Button x:Name="btnEditAddressee" Width="25" Height="25" ToolTip="Редактировать"
+                                  VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                <Image Source="/Images/New Edit64.png" />
+                            </Button>
+                            <Button x:Name="btnDeleteAddressee" Width="25" Height="25" ToolTip="Удалить"
+                                  VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                <Image Source="/Images/New Remove64.png" />
+                            </Button>
+                        </ToolBar>
+                    </ToolBarTray>
                     <TextBox Grid.Row="1" Grid.ColumnSpan="3" Background="Gray">
                         None
                     </TextBox>
@@ -85,7 +143,7 @@
                     <TextBox x:Name="tbToAddress"  Grid.Row="0" Grid.Column="0">from@gmail.com</TextBox>
                     <TextBox x:Name="tbFromAddress" Grid.Row="0" Grid.Column="1">toVasya@mail.ru</TextBox>
                     <PasswordBox x:Name="pbPassword" Grid.Row="1" Grid.Column="1"></PasswordBox>
-                    <TextBox x:Name="tbMesSubject" Grid.Row="2" Grid.Column="0">Содержание письма</TextBox>
+                    <RichTextBox x:Name="tbMesSubject" Grid.Row="2" Grid.ColumnSpan="3"/>
                     <TextBox x:Name="tbMesBody" Grid.Row="1" Grid.Column="0">Тема письма</TextBox>
                     <Button x:Name="btSend" Grid.Row="0" Grid.Column="2" Click="btSend_Click">
                         <StackPanel Orientation="Vertical">
@@ -95,10 +153,59 @@
                     </Button>
                 </Grid>
             </TabItem>
-            <TabItem Header="Планировщик"></TabItem>
-            <TabItem Header="Настройки"></TabItem>
-            <TabItem Header="Отчет"></TabItem>
-            <TabItem Header="Журнал"></TabItem>
+            <TabItem x:Name="tabPlanner" >
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                        <StackPanel.ToolTip>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/Images/Mimetypes-application-vnd-oasis-opendocument-text.ico" />
+                                <TextBlock>Планирование рассылки по датам</TextBlock>
+                            </StackPanel>
+                        </StackPanel.ToolTip>
+                        <Image Source="/Images/Mimetypes-application-vnd-oasis-opendocument-text.ico" Height="20"
+                               HorizontalAlignment="Left"/>
+                        <TextBlock Margin="3">Планировщик</TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Calendar x:Name="cldSchedulDateTimes" Grid.Column="0" Grid.Row="0" Width="179"
+                              SelectionMode="MultipleRange"></Calendar>
+                    <TextBox x:Name="tbTimePicker" Grid.Row="1" Grid.Column="0" Width="179" Height="25"/>
+                    <Button x:Name="btnSend" HorizontalAlignment="Left" VerticalAlignment="Top"
+                            Margin="0, 213, 0, 0" Width="179" Height="25" RenderTransformOrigin="-1.12, -0.727"
+                            Click="btnSend_Click">
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/Images/clock.png"  Width="16" Height="16"/>
+                                <TextBlock Margin="3, 0, 0, 0" Text="Отправить запланированно"
+                                           VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button.Content>
+                    </Button>
+                    <Button x:Name="btnSendNow" HorizontalAlignment="Left" VerticalAlignment="Top"
+                            Margin="1,2.6,0,-2" Width="179" Height="25" RenderTransformOrigin="-1.12, -0.727"
+                            Click="btnSendNow_Click" Grid.Row="1">
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/Images/Mail_64x.png"  Width="16" Height="16"/>
+                                <TextBlock Margin="3, 0, 0, 0" Text="Отправить сразу"
+                                           VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button.Content>
+                    </Button>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="tabProperties" Header="Настройки"></TabItem>
+            <TabItem x:Name="tabReport" Header="Отчет"></TabItem>
+            <TabItem x:Name="tabLog" Header="Журнал"></TabItem>
         </TabControl>
     </Grid>
 </Window>

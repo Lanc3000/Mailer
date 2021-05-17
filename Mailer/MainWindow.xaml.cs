@@ -26,6 +26,9 @@ namespace Mailer
         public MainWindow()
         {
             InitializeComponent();
+            cbSenderSelect.ItemsSource = VariableClass.Senders;
+            cbSenderSelect.DisplayMemberPath = "Key";
+            cbSenderSelect.SelectedValuePath = "Value";
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
@@ -40,7 +43,7 @@ namespace Mailer
             {
                 var toAddress = new MailAddress(tbToAddress.Text);
                 var fromAddress = new MailAddress(tbFromAddress.Text);
-                string subject = tbMesSubject.Text;
+                //string subject = tbMesSubject.Text;
                 string body = tbMesBody.Text;
                 string password = pbPassword.Password;
 
@@ -49,12 +52,27 @@ namespace Mailer
                 // а пока messagebox для заглушки
                 MessageBox.Show($"Отправленно от: {fromAddress}\n" +
                     $"На адрес: {toAddress}\n" +
-                    $"Тема: {subject}\n" +
+                    $"Тема: none\n" +
                     $"Сообщение: {body}");
             }
             catch (Exception ex) {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnClock_Click(object sender, RoutedEventArgs e)
+        {
+            tabControl.SelectedItem = tabPlanner;
+        }
+
+        private void btnSend_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnSendNow_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
