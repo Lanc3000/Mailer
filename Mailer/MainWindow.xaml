@@ -1,9 +1,10 @@
-﻿<Window x:Class="Mailer.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mailer"
+        xmlns:TabSwitcher="clr-namespace:TabSwitcher;assembly=TabSwitcher" x:Class="Mailer.MainWindow"
         mc:Ignorable="d"
         Title="Mailer" Height="450" Width="830" Icon="schedule.ico">
     <Grid>
@@ -27,11 +28,11 @@
                         <StackPanel.ToolTip>
                             <StackPanel Orientation="Horizontal">
                                 <Image Source="/Images/groups.ico" />
-                                <TextBlock>Формирование группы рассылки</TextBlock>
+                                <TextBlock><Run Text="Формирование группы рассылки"/></TextBlock>
                             </StackPanel>
                         </StackPanel.ToolTip>
                         <Image Source="/Images/groups.ico" Width="20" HorizontalAlignment="Left"/>
-                        <TextBlock Margin="3">Группы</TextBlock>
+                        <TextBlock Margin="3"><Run Text="Группы"/></TextBlock>
                     </StackPanel>
                 </TabItem.Header>
                 <Grid>
@@ -66,8 +67,7 @@
                                  VerticalAlignment="Top" Band="1" BandIndex="0">
                             <Label x:Name="lSmtp" Content="Выбрать smtp-сервер" Height="25" Width="Auto"/>
                             <ComboBox x:Name="cbSmtpSelect" Height="25" Width="270" Margin="0"
-                                      VerticalAlignment="Top" SelectedIndex="0" ToolTip="Выбрать smtp-сервер">
-                            </ComboBox>
+                                      VerticalAlignment="Top" SelectedIndex="0" ToolTip="Выбрать smtp-сервер"/>
                             <Button x:Name="btnAddSmtp" Width="25" Height="25" ToolTip="Добавить"
                                     VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                                 <Image Source="/Images/New Add64.png" />
@@ -83,11 +83,7 @@
                         </ToolBar>
                         <ToolBar x:Name="tbPlanner" HorizontalAlignment="Left" VerticalAlignment="Top"
                                  Height="30" Width="Auto" Band="0" BandIndex="1">
-                            <Label x:Name="lPlanner" Content="Перейти в планировщик" Height="25" Width="Auto"/>
-                            <Button x:Name="btnClock" Width="25" Height="25" ToolTip="Перейти в планировщик"
-                                    Click="btnClock_Click">
-                                <Image Source="/Images/clock.png" />
-                            </Button>
+                            <TabSwitcher:TabSwitcherClontrol x:Name="tscTabSwitcher" IsHideBtnPrevious="True" btnNextClick="tscTabSwitcher_btnNextClick"/>
                         </ToolBar>
                         <ToolBar x:Name="tbAddressee" HorizontalAlignment="Left" VerticalAlignment="Top"
                                  Height="30" Width="Auto" Band="1" BandIndex="1">
@@ -115,11 +111,11 @@
                         <StackPanel.ToolTip>
                             <StackPanel Orientation="Horizontal">
                                 <Image Source="/Images/Mail_64x.png" />
-                                <TextBlock>Заполнение полей письма</TextBlock>
+                                <TextBlock><Run Text="Заполнение полей письма"/></TextBlock>
                             </StackPanel>
                         </StackPanel.ToolTip>
                         <Image Source="/Images/Mail_64x.png" Width="20"/>
-                        <TextBlock>Письмо</TextBlock>
+                        <TextBlock><Run Text="Письмо"/></TextBlock>
                     </StackPanel>
                 </TabItem.Header>
                 <Grid>
@@ -133,15 +129,17 @@
                         <RowDefinition/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <TextBox x:Name="tbToAddress"  Grid.Row="0" Grid.Column="0">from@gmail.com</TextBox>
-                    <TextBox x:Name="tbFromAddress" Grid.Row="0" Grid.Column="1">toVasya@mail.ru</TextBox>
-                    <PasswordBox x:Name="pbPassword" Grid.Row="1" Grid.Column="1"></PasswordBox>
+                    <TextBox x:Name="tbToAddress"  Grid.Row="0" Grid.Column="0" Text="from@gmail.com"/>
+                    <TextBox x:Name="tbFromAddress" Grid.Row="0" Grid.Column="1" Text="toVasya@mail.ru"/>
+                    <PasswordBox x:Name="pbPassword" Grid.Row="1" Grid.Column="1"/>
                     <RichTextBox x:Name="tbMesSubject" Grid.Row="2" Grid.ColumnSpan="3"/>
-                    <TextBox x:Name="tbMesBody" Grid.Row="1" Grid.Column="0">Тема письма</TextBox>
-                    <Button x:Name="btSend" Grid.Row="0" Grid.Column="2" Click="btSend_Click">
+                    <TextBox x:Name="tbMesBody" Grid.Row="1" Grid.Column="0" Text="Тема письма"/>
+                    <TabSwitcher:TabSwitcherClontrol x:Name="tscTabSwitcherMail" Grid.Row="0" Grid.Column="2" Width="Auto"
+                                                     IsHideBtnPrevious="True" btnNextClick="tscTabSwitcher_btnNextClick" btnPreviosClick="tscTabSwitcherMail_btnPreviosClick"/>
+                    <Button x:Name="btSend" Grid.Row="1" Grid.Column="2" Click="btSend_Click">
                         <StackPanel Orientation="Vertical">
                             <Image Source="/Images/outbox1.png" Width="40"/>
-                            <TextBlock>Отправить</TextBlock>
+                            <TextBlock><Run Text="Отправить"/></TextBlock>
                         </StackPanel>
                     </Button>
                 </Grid>
@@ -152,12 +150,12 @@
                         <StackPanel.ToolTip>
                             <StackPanel Orientation="Horizontal">
                                 <Image Source="/Images/Mimetypes-application-vnd-oasis-opendocument-text.ico" />
-                                <TextBlock>Планирование рассылки по датам</TextBlock>
+                                <TextBlock><Run Text="Планирование рассылки по датам"/></TextBlock>
                             </StackPanel>
                         </StackPanel.ToolTip>
                         <Image Source="/Images/Mimetypes-application-vnd-oasis-opendocument-text.ico" Height="20"
                                HorizontalAlignment="Left"/>
-                        <TextBlock Margin="3">Планировщик</TextBlock>
+                        <TextBlock Margin="3"><Run Text="Планировщик"/></TextBlock>
                     </StackPanel>
                 </TabItem.Header>
                 <Grid>
@@ -170,35 +168,31 @@
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
                     <Calendar x:Name="cldSchedulDateTimes" Grid.Column="0" Grid.Row="0" Width="179"
-                              SelectionMode="MultipleRange"></Calendar>
+                              SelectionMode="MultipleRange"/>
                     <TextBox x:Name="tbTimePicker" Grid.Row="1" Grid.Column="0" Width="179" Height="25"/>
                     <Button x:Name="btnSend" HorizontalAlignment="Left" VerticalAlignment="Top"
                             Margin="0, 213, 0, 0" Width="179" Height="25" RenderTransformOrigin="-1.12, -0.727"
                             Click="btnSend_Click">
-                        <Button.Content>
-                            <StackPanel Orientation="Horizontal">
-                                <Image Source="/Images/clock.png"  Width="16" Height="16"/>
-                                <TextBlock Margin="3, 0, 0, 0" Text="Отправить запланированно"
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/Images/clock.png"  Width="16" Height="16"/>
+                            <TextBlock Margin="3, 0, 0, 0" Text="Отправить запланированно"
                                            VerticalAlignment="Center"/>
-                            </StackPanel>
-                        </Button.Content>
+                        </StackPanel>
                     </Button>
                     <Button x:Name="btnSendNow" HorizontalAlignment="Left" VerticalAlignment="Top"
                             Margin="1,2.6,0,-2" Width="179" Height="25" RenderTransformOrigin="-1.12, -0.727"
                             Click="btnSendNow_Click" Grid.Row="1">
-                        <Button.Content>
-                            <StackPanel Orientation="Horizontal">
-                                <Image Source="/Images/Mail_64x.png"  Width="16" Height="16"/>
-                                <TextBlock Margin="3, 0, 0, 0" Text="Отправить сразу"
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/Images/Mail_64x.png"  Width="16" Height="16"/>
+                            <TextBlock Margin="3, 0, 0, 0" Text="Отправить сразу"
                                            VerticalAlignment="Center"/>
-                            </StackPanel>
-                        </Button.Content>
+                        </StackPanel>
                     </Button>
                 </Grid>
             </TabItem>
-            <TabItem x:Name="tabProperties" Header="Настройки"></TabItem>
-            <TabItem x:Name="tabReport" Header="Отчет"></TabItem>
-            <TabItem x:Name="tabLog" Header="Журнал"></TabItem>
+            <TabItem x:Name="tabProperties" Header="Настройки"/>
+            <TabItem x:Name="tabReport" Header="Отчет"/>
+            <TabItem x:Name="tabLog" Header="Журнал"/>
         </TabControl>
     </Grid>
 </Window>

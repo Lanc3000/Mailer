@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mailer
+namespace CodePasswordDLL
 {
-    public static class PasswordClass
+    public class CodePassword
     {
         public static string getPassword(string p_sPassw)
         {
             string password = "";
-            foreach(char a in p_sPassw)
+            foreach (char a in p_sPassw)
             {
                 char ch = a;
                 ch--;

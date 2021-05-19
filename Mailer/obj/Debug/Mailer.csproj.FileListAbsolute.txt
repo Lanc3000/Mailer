@@ -15,3 +15,8 @@ D:\Учёба\Курс по C#3\HomeWork\Mailer\Mailer\obj\Debug\Mailer.exe
 D:\Учёба\Курс по C#3\HomeWork\Mailer\Mailer\obj\Debug\Mailer.pdb
 D:\Учёба\Курс по C#3\HomeWork\Mailer\Mailer\obj\Debug\wndAbout.g.cs
 D:\Учёба\Курс по C#3\HomeWork\Mailer\Mailer\obj\Debug\wndAbout.baml
+D:\Учёба\Курс по C#3\HomeWork\Mailer\Mailer\bin\Debug\CodePasswordDLL.dll
+D:\Учёба\Курс по C#3\HomeWork\Mailer\Mailer\bin\Debug\CodePasswordDLL.pdb
+D:\Учёба\Курс по C#3\HomeWork\Mailer\Mailer\obj\Debug\Mailer.csproj.CopyComplete
+D:\Учёба\Курс по C#3\HomeWork\Mailer\Mailer\bin\Debug\TabSwitcher.dll
+D:\Учёба\Курс по C#3\HomeWork\Mailer\Mailer\bin\Debug\TabSwitcher.pdb
