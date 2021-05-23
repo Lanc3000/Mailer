@@ -20,3 +20,7 @@ D:\Учёба\Курс по C#3\HomeWork\Mailer\Mailer\bin\Debug\CodePasswordDLL
 D:\Учёба\Курс по C#3\HomeWork\Mailer\Mailer\obj\Debug\Mailer.csproj.CopyComplete
 D:\Учёба\Курс по C#3\HomeWork\Mailer\Mailer\bin\Debug\TabSwitcher.dll
 D:\Учёба\Курс по C#3\HomeWork\Mailer\Mailer\bin\Debug\TabSwitcher.pdb
+D:\Учёба\Курс по C#3\HomeWork\Mailer\Mailer\bin\Debug\FontAwesome5.dll
+D:\Учёба\Курс по C#3\HomeWork\Mailer\Mailer\bin\Debug\FontAwesome5.Net.dll
+D:\Учёба\Курс по C#3\HomeWork\Mailer\Mailer\bin\Debug\FontAwesome5.xml
+D:\Учёба\Курс по C#3\HomeWork\Mailer\Mailer\bin\Debug\FontAwesome5.Net.xml

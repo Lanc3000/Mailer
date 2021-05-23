@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mailer"
         xmlns:TabSwitcher="clr-namespace:TabSwitcher;assembly=TabSwitcher" x:Class="Mailer.MainWindow"
+        xmlns:fa="http://schemas.fontawesome.com/icons/"
         mc:Ignorable="d"
         Title="Mailer" Height="450" Width="830" Icon="schedule.ico">
     <Grid>
@@ -125,15 +126,26 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition />
                     </Grid.RowDefinitions>
-                    <TextBox x:Name="tbToAddress"  Grid.Row="0" Grid.Column="0" Text="from@gmail.com"/>
-                    <TextBox x:Name="tbFromAddress" Grid.Row="0" Grid.Column="1" Text="toVasya@mail.ru"/>
-                    <PasswordBox x:Name="pbPassword" Grid.Row="1" Grid.Column="1"/>
-                    <RichTextBox x:Name="tbMesSubject" Grid.Row="2" Grid.ColumnSpan="3"/>
-                    <TextBox x:Name="tbMesBody" Grid.Row="1" Grid.Column="0" Text="Тема письма"/>
+                    <Label Content="От: " Grid.Row="0" Grid.Column="0"/>
+                    <TextBox x:Name="tbFromAddress" Grid.Row="1" Grid.Column="0" Text="toVasya@mail.ru"/>
+                    
+                    <Label Content="Кому: " Grid.Row="0" Grid.Column="1"/>
+                    <TextBox x:Name="tbToAddress"  Grid.Row="1" Grid.Column="1" Text="from@gmail.com"/>
+
+                    <Label Content="Пароль: " Grid.Row="2" Grid.Column="0" />
+                    <PasswordBox x:Name="pbPassword" Grid.Row="3" Grid.Column="0" Background="Gray"/>
+
+                    <Label Content="Тема письма: " Grid.Row="2" Grid.Column="1" />
+                    <RichTextBox x:Name="tbMesSubject" Grid.Row="3" Grid.Column="1" Background="Gray"/>
+
+                    <Label Content="Текст письма: " Grid.Row="2" Grid.Column="2"/>
+                    <TextBox x:Name="tbMesBody" Grid.Row="3" Grid.Column="2" Background="Gray"/>
+                    
                     <TabSwitcher:TabSwitcherClontrol x:Name="tscTabSwitcherMail" Grid.Row="0" Grid.Column="2" Width="Auto"
                                                      IsHideBtnPrevious="True" btnNextClick="tscTabSwitcher_btnNextClick" btnPreviosClick="tscTabSwitcherMail_btnPreviosClick"/>
                     <Button x:Name="btSend" Grid.Row="1" Grid.Column="2" Click="btSend_Click">
@@ -190,9 +202,48 @@
                     </Button>
                 </Grid>
             </TabItem>
-            <TabItem x:Name="tabProperties" Header="Настройки"/>
-            <TabItem x:Name="tabReport" Header="Отчет"/>
-            <TabItem x:Name="tabLog" Header="Журнал"/>
+            <TabItem x:Name="tabProperties">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                        <StackPanel.ToolTip>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/Images/settings.ico" />
+                                <TextBlock><Run Text="Разные настройки"/></TextBlock>
+                            </StackPanel>
+                        </StackPanel.ToolTip>
+                        <Label fa:Awesome.Content="Brands_Codepen" />
+                        <TextBlock Margin="3"><Run Text="Настройки"/></TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+            </TabItem>
+            <TabItem x:Name="tabReport" >
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                        <StackPanel.ToolTip>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/Images/Mimetypes-application-vnd-oasis-opendocument-text.ico" />
+                                <TextBlock Text="Отчет"/>
+                            </StackPanel>
+                        </StackPanel.ToolTip>
+                        <Label fa:Awesome.Content="Brands_DigitalOcean"/>
+                        <TextBlock Margin="3" Text="Отчет"/>
+                    </StackPanel>
+                </TabItem.Header>
+            </TabItem>
+            <TabItem x:Name="tabLog" >
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                        <StackPanel.ToolTip>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/Images/stat.ico" />
+                                <TextBlock><Run Text="Записи журнала"/></TextBlock>
+                            </StackPanel>
+                        </StackPanel.ToolTip>
+                        <Label fa:Awesome.Content="Brands_RaspberryPi"/>
+                        <TextBlock Margin="3" Text="Журнал"/>
+                    </StackPanel>
+                </TabItem.Header>
+            </TabItem>
         </TabControl>
     </Grid>
 </Window>
