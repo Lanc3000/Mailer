@@ -138,16 +138,16 @@
                     <TextBox x:Name="tbToAddress"  Grid.Row="1" Grid.Column="1" Text="from@gmail.com"/>
 
                     <Label Content="Пароль: " Grid.Row="2" Grid.Column="0" />
-                    <PasswordBox x:Name="pbPassword" Grid.Row="3" Grid.Column="0" Background="Gray"/>
+                    <PasswordBox x:Name="pbPassword" Grid.Row="3" Grid.Column="0"/>
 
                     <Label Content="Тема письма: " Grid.Row="2" Grid.Column="1" />
-                    <RichTextBox x:Name="tbMesSubject" Grid.Row="3" Grid.Column="1" Background="Gray"/>
+                    <RichTextBox x:Name="tbMesSubject" Grid.Row="3" Grid.Column="1"/>
 
                     <Label Content="Текст письма: " Grid.Row="2" Grid.Column="2"/>
-                    <TextBox x:Name="tbMesBody" Grid.Row="3" Grid.Column="2" Background="Gray"/>
+                    <TextBox x:Name="tbMesBody" Grid.Row="3" Grid.Column="2"/>
                     
                     <TabSwitcher:TabSwitcherClontrol x:Name="tscTabSwitcherMail" Grid.Row="0" Grid.Column="2" Width="Auto"
-                                                     IsHideBtnPrevious="True" btnNextClick="tscTabSwitcher_btnNextClick" btnPreviosClick="tscTabSwitcherMail_btnPreviosClick"/>
+                                                     IsHideBtnPrevious="False" btnNextClick="tscTabSwitcher_btnNextClick" btnPreviosClick="tscTabSwitcherMail_btnPreviosClick"/>
                     <Button x:Name="btSend" Grid.Row="1" Grid.Column="2" Click="btSend_Click">
                         <StackPanel Orientation="Vertical">
                             <Image Source="/Images/outbox1.png" Width="40"/>
@@ -241,6 +241,7 @@
                         </StackPanel.ToolTip>
                         <Label fa:Awesome.Content="Brands_RaspberryPi"/>
                         <TextBlock Margin="3" Text="Журнал"/>
+                        
                     </StackPanel>
                 </TabItem.Header>
             </TabItem>
