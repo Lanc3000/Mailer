@@ -18,7 +18,7 @@
         <Image Source="/Images/Я.jpg" Grid.Row="0" Grid.Column="0" Margin="10" Height="150"/>
         <TextBlock Grid.Row="0" Grid.Column="1">
             Самигуллин Тимур,
-            34 года, Москва
+            34 года, Москва.
         </TextBlock>
         <Button x:Name="btClose" Grid.Column="0" Grid.Row="1" Click="btClose_Click">
             <StackPanel Orientation="Horizontal">
