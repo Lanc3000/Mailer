@@ -207,5 +207,10 @@
       <Name>TabSwitcher</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\" />
+    <Folder Include="ViewModel\" />
+    <Folder Include="View\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
